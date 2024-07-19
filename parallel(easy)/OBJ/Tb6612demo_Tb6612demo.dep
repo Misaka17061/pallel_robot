@@ -1,6 +1,6 @@
 Dependencies for Project 'Tb6612demo', Target 'Tb6612demo': (DO NOT MODIFY !)
 CompilerVersion: 5060960::V5.06 update 7 (build 960)::.\ARMCC
-F (.\main.c)(0x66938E58)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\USER -I ..\STM32F10x_FWLIB\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HAREWER\MOTO -I ..\HAREWER\PWM -I ..\HAREWER\GPIO -I ..\HAREWER\ADC -I ..\HAREWER\ENCODER -I ..\HAREWER\PS2-ID:\flushbonading\MDK\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="538" -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
+F (.\main.c)(0x669657C3)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\USER -I ..\STM32F10x_FWLIB\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HAREWER\MOTO -I ..\HAREWER\PWM -I ..\HAREWER\GPIO -I ..\HAREWER\ADC -I ..\HAREWER\ENCODER -I ..\HAREWER\PS2-ID:\flushbonading\MDK\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="538" -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
 I (stm32f10x.h)(0x5E8160B8)
 I (..\CORE\core_cm3.h)(0x5E8160D0)
 I (D:\flushbonading\MDK\Core\ARM\ARMCC\include\stdint.h)(0x6025237E)
@@ -33,7 +33,7 @@ I (..\STM32F10x_FWLIB\inc\misc.h)(0x5E8160C6)
 I (..\SYSTEM\delay\delay.h)(0x5E8160BE)
 I (..\SYSTEM\sys\sys.h)(0x5E8160BE)
 I (..\HAREWER\GPIO\gpio.h)(0x5E8160CE)
-I (..\HAREWER\MOTO\moto.h)(0x64C87F04)
+I (..\HAREWER\MOTO\moto.h)(0x669657C4)
 I (..\HAREWER\PWM\pwm.h)(0x649A8B04)
 I (..\HAREWER\ADC\adc.h)(0x61316DD4)
 I (..\SYSTEM\usart\usart.h)(0x5E8160BE)
@@ -864,8 +864,8 @@ I (..\STM32F10x_FWLIB\inc\stm32f10x_wwdg.h)(0x5E8160CC)
 I (..\STM32F10x_FWLIB\inc\misc.h)(0x5E8160C6)
 I (..\SYSTEM\usart\usart.h)(0x5E8160BE)
 I (D:\flushbonading\MDK\Core\ARM\ARMCC\include\stdio.h)(0x60252374)
-F (..\HAREWER\MOTO\moto.c)(0x64C8A302)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\USER -I ..\STM32F10x_FWLIB\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HAREWER\MOTO -I ..\HAREWER\PWM -I ..\HAREWER\GPIO -I ..\HAREWER\ADC -I ..\HAREWER\ENCODER -I ..\HAREWER\PS2-ID:\flushbonading\MDK\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="538" -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\moto.o --omf_browse ..\obj\moto.crf --depend ..\obj\moto.d)
-I (..\HAREWER\MOTO\moto.h)(0x64C87F04)
+F (..\HAREWER\MOTO\moto.c)(0x669657C3)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\USER -I ..\STM32F10x_FWLIB\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HAREWER\MOTO -I ..\HAREWER\PWM -I ..\HAREWER\GPIO -I ..\HAREWER\ADC -I ..\HAREWER\ENCODER -I ..\HAREWER\PS2-ID:\flushbonading\MDK\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="538" -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\moto.o --omf_browse ..\obj\moto.crf --depend ..\obj\moto.d)
+I (..\HAREWER\MOTO\moto.h)(0x669657C4)
 I (..\USER\stm32f10x.h)(0x5E8160B8)
 I (..\CORE\core_cm3.h)(0x5E8160D0)
 I (D:\flushbonading\MDK\Core\ARM\ARMCC\include\stdint.h)(0x6025237E)

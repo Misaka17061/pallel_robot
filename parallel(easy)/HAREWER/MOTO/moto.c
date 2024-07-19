@@ -41,6 +41,62 @@ void moto(int mode)
 	 }
  
 }
+
+void motor_A(int mode)
+{
+	if(mode == 1 )
+	{
+	 GPIO_SetBits(GPIOC, GPIO_Pin_14);	 // 高电平      PC14 --- AIN2      1   
+	 GPIO_ResetBits(GPIOC, GPIO_Pin_13);	 // 低电平}   PC13 --- AIN1      0
+	}
+	else if(mode == 0)
+	{
+	 GPIO_SetBits(GPIOC, GPIO_Pin_13);	 // 高电平       PC13 --- AIN1     1
+	 GPIO_ResetBits(GPIOC, GPIO_Pin_14);	 // 低电平}    PC14 --- AIN2     0
+	}
+}
+
+void motor_B(int mode)
+{
+	if(mode == 1 )
+	{
+			GPIO_SetBits(GPIOB, GPIO_Pin_13);     //高电平   PB13 --- BIN2       1
+			GPIO_ResetBits(GPIOB, GPIO_Pin_12);  // 低电平   PB12 --- BIN1       0
+	}
+	else if(mode == 0)
+	{
+			GPIO_SetBits(GPIOB, GPIO_Pin_12);     //高电平   PB12 --- BIN1     1
+			GPIO_ResetBits(GPIOB, GPIO_Pin_13);  // 低电平   PB13 --- BIN2        0
+	}
+}
+void motor_C(int mode)
+{
+	if(mode == 1 )
+	{
+			GPIO_SetBits(GPIOB, GPIO_Pin_1);     //高电平   PB1 --- CIN2       1
+			GPIO_ResetBits(GPIOB, GPIO_Pin_0);  // 低电平   PB0 --- CIN1       0
+	}
+	else if(mode == 0)
+	{
+			GPIO_SetBits(GPIOB, GPIO_Pin_0);     //高电平   PB0 --- CIN1       1
+			GPIO_ResetBits(GPIOB, GPIO_Pin_1);  // 低电平   PB1 --- CIN2       0
+	}
+}
+
+void motor_D(int mode)
+{
+	if(mode == 1 )
+	{
+			GPIO_SetBits(GPIOC, GPIO_Pin_1);     //高电平   PC2 --- DIN2       1
+			GPIO_ResetBits(GPIOC, GPIO_Pin_2);  // 低电平   PC1 --- DIN1       0
+	}
+	else if(mode == 0)
+	{
+			GPIO_SetBits(GPIOC, GPIO_Pin_2);     //高电平   PC1 --- DIN1       1
+			GPIO_ResetBits(GPIOC, GPIO_Pin_1);  // 低电平   PC2 --- DIN2       0
+	}
+}
+
 /***************************************************************************
 函数功能：电机的闭环控制
 入口参数：左右电机的编码器值
