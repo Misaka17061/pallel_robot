@@ -16,6 +16,11 @@ int TargetVelocity_B = 0;
 int TargetVelocity_C = 0;
 int TargetVelocity_D = 0;
 
+float A;
+float B;
+float C;
+float D;
+
 static void calculate(void);
 
 int main(void)
@@ -53,13 +58,21 @@ int main(void)
 		encoder_B=Read_Encoder(2);
 		encoder_C=Read_Encoder(3);
 		encoder_D=Read_Encoder(4);
+		A += encoder_A; 
+		B += encoder_B;
+		C += encoder_C;
+		D += encoder_D;
+		A = A/300;
+		B = B/300;
+		C = C/300;
+		D = D/300;
     Velocity_PWMA=Velocity_A(TargetVelocity_A,encoder_A);
 		Velocity_PWMB=Velocity_B(TargetVelocity_B,encoder_B);
 		Velocity_PWMC=Velocity_C(TargetVelocity_C,encoder_C);
 		Velocity_PWMD=Velocity_D(TargetVelocity_D,encoder_D);
 		
 		Set_PWM(Velocity_PWMA,Velocity_PWMB,Velocity_PWMC,Velocity_PWMD);
-		printf("当前电压=%6.2f V  Encoder_A = %d  Encoder_B=%d\r\n   Encoder_C = %d  Encoder_D=%d\r\n",vcc,encoder_A,encoder_B,encoder_C,encoder_D);				
+		printf("当前电压=%6.2f V  A = %d  B=%d\r\n   C = %d  D=%d\r\n",vcc,(int)A,(int)B,(int)C,(int)D);				
 	}
  }
 
