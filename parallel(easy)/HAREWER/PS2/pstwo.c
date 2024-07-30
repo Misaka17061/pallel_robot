@@ -1,12 +1,6 @@
 #include "pstwo.h"
 #include "usart.h"
-/*********************************************************
-Copyright (C), 2015-2025, YFRobot.
-www.yfrobot.com
-File：PS2驱动程序
-Author：pinggai    Version:1.0     Data:2015/05/16
-Description: PS2驱动程序
-**********************************************************/	 
+ 
 u16 Handkey;
 u8 Comd[2]={0x01,0x42};	//开始命令。请求数据
 u8 Data[9]={0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00}; //数据存储数组
@@ -41,7 +35,41 @@ void PS2_Init(void)
     //  DO->PB13    CS->PB14  CLK->PB15
 	RCC->APB2ENR|=1<<3;    //使能PORTB时钟  	   	  	 
 	GPIOB->CRH&=0X000FFFFF; 
-	GPIOB->CRH|=0X33300000;//PB13、PB14、PB15 推挽输出   	 											  
+	GPIOB->CRH|=0X33300000;//PB13、PB14、PB15 推挽输出
+	
+
+//	GPIO_InitTypeDef GPIO_InitStructure;                //定义结构体GPIO_InitStructure
+//	TIM_TimeBaseInitTypeDef TIM_TimeBaseStructure;      //定义结构体TIM_TimeBaseStructure   
+//	TIM_OCInitTypeDef TIM_OCInitStructure;              //定义结构体TIM_OCInitStructure
+//	
+//	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB,ENABLE);//使能PA端口时钟
+//	RCC_APB1PeriphClockCmd(RCC_APB2Periph_TIM1,ENABLE);//使能定时器3
+//	
+//	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;
+//	GPIO_InitStructure.GPIO_Pin  = GPIO_Pin_15;
+//	GPIO_InitStructure.GPIO_Speed= GPIO_Speed_50MHz;
+//	GPIO_Init(GPIOA,&GPIO_InitStructure);
+//	
+//	TIM_TimeBaseStructure.TIM_Period = 7199;                //设置下一个更新活动的自动重装载寄存器的值
+//	TIM_TimeBaseStructure.TIM_Prescaler = 3599;             //预分配值
+//	TIM_TimeBaseStructure.TIM_ClockDivision = 0;           //时钟分割
+//	TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up; //向上计数
+//	TIM_TimeBaseInit(TIM5,&TIM_TimeBaseStructure);
+//	
+//	TIM_OCInitStructure.TIM_OCMode= TIM_OCMode_PWM1;             //PWM脉冲宽度调制1
+//	TIM_OCInitStructure.TIM_Pulse = 0;                           //设置待装入捕获比较寄存器的脉冲值
+//	TIM_OCInitStructure.TIM_OCPolarity = TIM_OCPolarity_High;    //设置TIM输出极性为高
+//	TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable;//比较输出使能
+//	TIM_OC1Init(TIM5,&TIM_OCInitStructure);
+//	TIM_OC2Init(TIM5,&TIM_OCInitStructure);
+//	TIM_OC3Init(TIM5,&TIM_OCInitStructure);
+//	TIM_OC4Init(TIM5,&TIM_OCInitStructure);
+//	
+//	
+//	TIM_OC1PreloadConfig(TIM1,TIM_OCPreload_Enable);
+
+//	TIM_ARRPreloadConfig(TIM1,ENABLE);              //使能自动装载允许位
+//	TIM_Cmd(TIM5,ENABLE);//启动定时器5	
 }
 
 //向手柄发送命令

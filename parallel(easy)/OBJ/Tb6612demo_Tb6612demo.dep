@@ -1,6 +1,6 @@
 Dependencies for Project 'Tb6612demo', Target 'Tb6612demo': (DO NOT MODIFY !)
 CompilerVersion: 5060960::V5.06 update 7 (build 960)::.\ARMCC
-F (.\main.c)(0x669B52B3)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\USER -I ..\STM32F10x_FWLIB\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HAREWER\MOTO -I ..\HAREWER\PWM -I ..\HAREWER\GPIO -I ..\HAREWER\ADC -I ..\HAREWER\ENCODER -I ..\HAREWER\PS2-ID:\flushbonading\MDK\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="538" -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
+F (.\main.c)(0x66A908EF)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\USER -I ..\STM32F10x_FWLIB\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HAREWER\MOTO -I ..\HAREWER\PWM -I ..\HAREWER\GPIO -I ..\HAREWER\ADC -I ..\HAREWER\ENCODER -I ..\HAREWER\PS2-ID:\flushbonading\MDK\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="538" -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
 I (stm32f10x.h)(0x5E8160B8)
 I (..\CORE\core_cm3.h)(0x5E8160D0)
 I (D:\flushbonading\MDK\Core\ARM\ARMCC\include\stdint.h)(0x6025237E)
@@ -1018,7 +1018,7 @@ I (..\STM32F10x_FWLIB\inc\stm32f10x_tim.h)(0x5E8160CC)
 I (..\STM32F10x_FWLIB\inc\stm32f10x_usart.h)(0x5E8160CC)
 I (..\STM32F10x_FWLIB\inc\stm32f10x_wwdg.h)(0x5E8160CC)
 I (..\STM32F10x_FWLIB\inc\misc.h)(0x5E8160C6)
-F (..\HAREWER\PS2\pstwo.c)(0x55EE3D7A)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\USER -I ..\STM32F10x_FWLIB\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HAREWER\MOTO -I ..\HAREWER\PWM -I ..\HAREWER\GPIO -I ..\HAREWER\ADC -I ..\HAREWER\ENCODER -I ..\HAREWER\PS2-ID:\flushbonading\MDK\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="538" -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\pstwo.o --omf_browse ..\obj\pstwo.crf --depend ..\obj\pstwo.d)
+F (..\HAREWER\PS2\pstwo.c)(0x66A8B109)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\USER -I ..\STM32F10x_FWLIB\inc -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\HAREWER\MOTO -I ..\HAREWER\PWM -I ..\HAREWER\GPIO -I ..\HAREWER\ADC -I ..\HAREWER\ENCODER -I ..\HAREWER\PS2-ID:\flushbonading\MDK\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="538" -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\pstwo.o --omf_browse ..\obj\pstwo.crf --depend ..\obj\pstwo.d)
 I (..\HAREWER\PS2\pstwo.h)(0x55DC059E)
 I (..\SYSTEM\delay\delay.h)(0x5E8160BE)
 I (..\SYSTEM\sys\sys.h)(0x5E8160BE)

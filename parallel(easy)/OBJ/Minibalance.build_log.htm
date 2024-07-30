@@ -28,13 +28,21 @@ Project File Date:  07/14/2024
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\flushbonading\MDK\Core\ARM\ARMCC\Bin'
 Build target 'Tb6612demo'
 compiling main.c...
-main.c(28): warning:  #550-D: variable "key"  was set but never used
-  	 u8 key;	
-main.c: 1 warning, 0 errors
+main.c(81): warning:  #177-D: variable "key"  was declared but never referenced
+  	 key_t* key;	
+main.c(85): warning:  #177-D: variable "Velocity_PWMA"  was declared but never referenced
+  	 int Velocity_PWMA=0,Velocity_PWMB=0,Velocity_PWMC=0,Velocity_PWMD=0;
+main.c(85): warning:  #177-D: variable "Velocity_PWMB"  was declared but never referenced
+  	 int Velocity_PWMA=0,Velocity_PWMB=0,Velocity_PWMC=0,Velocity_PWMD=0;
+main.c(85): warning:  #177-D: variable "Velocity_PWMC"  was declared but never referenced
+  	 int Velocity_PWMA=0,Velocity_PWMB=0,Velocity_PWMC=0,Velocity_PWMD=0;
+main.c(85): warning:  #177-D: variable "Velocity_PWMD"  was declared but never referenced
+  	 int Velocity_PWMA=0,Velocity_PWMB=0,Velocity_PWMC=0,Velocity_PWMD=0;
+main.c: 5 warnings, 0 errors
 linking...
-Program Size: Code=14952 RO-data=444 RW-data=164 ZI-data=1844  
+Program Size: Code=13104 RO-data=444 RW-data=84 ZI-data=1836  
 FromELF: creating hex file...
-"..\OBJ\Minibalance.axf" - 0 Error(s), 1 Warning(s).
+"..\OBJ\Minibalance.axf" - 0 Error(s), 5 Warning(s).
 
 <h2>Software Packages used:</h2>
 

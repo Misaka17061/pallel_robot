@@ -9,25 +9,79 @@
 #include "encoder.h"
 #include "pstwo.h"
 
- 
+ typedef struct key
+{
+		uint8_t key1;
+		uint8_t key2;
+		uint8_t key3;
+		uint8_t key4;
+		uint8_t key5;
+		uint8_t key6;
+		uint8_t key7;
+		uint8_t key8;
 
-int TargetVelocity_A = 0;
-int TargetVelocity_B = 0;
-int TargetVelocity_C = 0;
-int TargetVelocity_D = 0;
+}key_t;
+
+typedef struct step
+{
+		uint16_t step1;
+		uint16_t step2;
+		uint16_t step3;
+}step_t;
+
+void step(step_t* step,uint16_t step1,uint16_t step2,uint16_t step3)
+{
+		step->step1++;
+		if (step->step1 <= step1) return;
+		
+		step->step2++;
+		if(step->step2 <= step2) return;
+	
+		step->step3++;
+		if(step->step3 <= step3) return;
+
+}
+
+int TargetVelocity_A = 100;
+int TargetVelocity_B = 100;
+int TargetVelocity_C = 100;
+int TargetVelocity_D = 100;
 
 float A;
 float B;
 float C;
 float D;
 
-static void calculate(void);
+
+
+static void calculate(uint8_t key1,uint8_t key2,uint8_t key3,uint8_t key4,uint8_t key5,uint8_t key6,uint8_t key7,uint8_t key8);
+
+
+
+
+
+void dicision(key_t* key,uint8_t key1,uint8_t key2,uint8_t key3,uint8_t key4,uint8_t key5,uint8_t key6,uint8_t key7,uint8_t key8)
+{
+		key->key1 = key1;
+		key->key2 = key2;
+	
+		key->key3 = key3;		
+		key->key4 = key4;
+	
+		key->key5 = key5;
+		key->key6 = key6;
+	
+		key->key7 = key7;
+		key->key8 = key8;
+}
+	
 
 int main(void)
  {
-	 u8 key;	
+	 key_t* key;	
 	 
-	 int encoder_A,encoder_B,encoder_C,encoder_D;
+	 
+	 int encoder_A = 0,encoder_B = 0,encoder_C = 0,encoder_D = 0;
 	 int Velocity_PWMA=0,Velocity_PWMB=0,Velocity_PWMC=0,Velocity_PWMD=0;
 	 u16 adcx;
 	 float vcc;
@@ -45,12 +99,14 @@ int main(void)
    Encoder_Init_Tim3();
    Encoder_Init_Tim4();
 	 
-	 PS2_Init();
+	// PS2_Init();
 	while(1)
 	{
-		key=PS2_DataKey();
-		calculate();
 		
+		//key=PS2_DataKey();
+		calculate(1,0,1,0,1,0,1,0);
+		
+			
 		adcx=Get_adc_Average(ADC_Channel_5,10);  //获取adc的值
 		vcc=(float)adcx*(3.3*11/4096);     				//求当前电压
 		
@@ -62,80 +118,54 @@ int main(void)
 		B += encoder_B;
 		C += encoder_C;
 		D += encoder_D;
-		A = A/300;
-		B = B/300;
-		C = C/300;
-		D = D/300;
-    Velocity_PWMA=Velocity_A(TargetVelocity_A,encoder_A);
-		Velocity_PWMB=Velocity_B(TargetVelocity_B,encoder_B);
-		Velocity_PWMC=Velocity_C(TargetVelocity_C,encoder_C);
-		Velocity_PWMD=Velocity_D(TargetVelocity_D,encoder_D);
+
+//    Velocity_PWMA=Velocity_A(TargetVelocity_A,encoder_A);
+//		Velocity_PWMB=Velocity_B(TargetVelocity_B,encoder_B);
+//		Velocity_PWMC=Velocity_C(TargetVelocity_C,encoder_C);
+//		Velocity_PWMD=Velocity_D(TargetVelocity_D,encoder_D);
 		
-		Set_PWM(Velocity_PWMA,Velocity_PWMB,Velocity_PWMC,Velocity_PWMD);
-		printf("当前电压=%6.2f V  A = %d  B=%d\r\n   C = %d  D=%d\r\n",vcc,(int)A,(int)B,(int)C,(int)D);				
+		Set_PWM(1000,1000,1000,1000);
+		printf("当前电压=%6.2f V  A = %d  B=%d\r\n   C = %d  D=%d\r\n",vcc,(int)A/600,(int)B/600,(int)C/600,(int)D/600);	
+		//printf("当前电压=%6.2f V  A = %d  B=%d\r\n   C = %d  D=%d\r\n",vcc,PS2_AnologData(PSB_PAD_LEFT),PS2_AnologData(PSB_PAD_RIGHT),PS2_AnologData(PSB_PAD_UP),PS2_AnologData(PSB_PAD_DOWN));	
 	}
  }
 
- static void calculate(void)
+ static void calculate(uint8_t key1,uint8_t key2,uint8_t key3,uint8_t key4,uint8_t key5,uint8_t key6,uint8_t key7,uint8_t key8)
  {
-			if(PS2_AnologData(PSB_PAD_LEFT) == 1)
+			if( key1 == 1)
 			{
 					motor_A(1);
-					TargetVelocity_A = 500;
 			}
-			else if(PS2_AnologData(PSB_PAD_RIGHT) == 1)
+			else if(key2 == 1)
 			{
 					motor_A(0);
-					TargetVelocity_A = 500;
 			}
-			else
-			{
-					TargetVelocity_A = 0;
-			}
-			
-			if(PS2_AnologData(PSB_PAD_UP) == 1)
+
+			if(key3 == 1)
 			{
 					motor_B(1);
-					TargetVelocity_B = 500;
 			}
-			else if(PS2_AnologData(PSB_PAD_DOWN) == 1)
+			else if(key4 == 1)
 			{
 					motor_B(0);
-					TargetVelocity_B = 500;
-			}
-			else
-			{
-					TargetVelocity_B = 0;
 			}
 			
-			if(PS2_AnologData(PSB_SQUARE) == 1)
+			if(key5 == 1)
 			{
 					motor_C(1);
-					TargetVelocity_C = 500;
 			}
-			else if(PS2_AnologData(PSB_CIRCLE) == 1)
+			else if(key6 == 1)
 			{
 					motor_C(0);
-					TargetVelocity_C = 500;
-			}
-			else
-			{
-					TargetVelocity_C = 0;
 			}
 			
-			if(PS2_AnologData(PSB_TRIANGLE) == 1)
+			if(key7 == 1)
 			{
 					motor_D(1);
-					TargetVelocity_D = 500;
 			}
-			else if(PS2_AnologData(PSB_CROSS) == 1)
+			else if(key8 == 1)
 			{
 					motor_D(0);
-					TargetVelocity_D = 500;
-			}
-			else
-			{
-					TargetVelocity_D = 0;
 			}
  }
 
