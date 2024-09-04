@@ -18,6 +18,8 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "dma.h"
+#include "usart.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
@@ -55,6 +57,14 @@ void SystemClock_Config(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
+/* 引脚设定
+C0 CLK
+C15 CS
+C14 CMD
+C13 DAT
+*/
+char buffer[8] = {0x11, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08};
+
 /* USER CODE END 0 */
 
 /**
@@ -86,6 +96,8 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
+  MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
@@ -95,7 +107,8 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-
+    HAL_Delay(500);
+    HAL_UART_Transmit_DMA(&huart1, (const uint8_t *)buffer, 8);
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

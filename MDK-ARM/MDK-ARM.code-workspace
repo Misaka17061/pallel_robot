@@ -1,0 +1,13 @@
+{
+    "folders": [
+        {
+            "path": "."
+        }
+    ],
+    "settings": {
+        "files.associations": {
+            "bsp_init.h": "c"
+        }
+    },
+    "extensions": {}
+}
