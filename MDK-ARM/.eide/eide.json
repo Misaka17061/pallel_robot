@@ -149,6 +149,18 @@
           }
         ],
         "folders": []
+      },
+      {
+        "name": "Components_device",
+        "files": [
+          {
+            "path": "../Components/device/ps2.c"
+          },
+          {
+            "path": "../Components/device/ps2.h"
+          }
+        ],
+        "folders": []
       }
     ]
   },
@@ -319,8 +331,8 @@
           "beforeBuildTasks": [],
           "afterBuildTasks": [],
           "global": {
-            "use-microLIB": false,
-            "output-debug-info": "enable"
+            "output-debug-info": "enable",
+            "use-microLIB": true
           },
           "c/cpp-compiler": {
             "optimization": "level-3",
@@ -332,10 +344,7 @@
           },
           "asm-compiler": {},
           "linker": {
-            "output-format": "elf",
-            "xo-base": "",
-            "ro-base": "",
-            "rw-base": ""
+            "output-format": "elf"
           }
         }
       }

@@ -24,6 +24,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "bsp_init.h"
+#include <stdio.h>
 
 /* USER CODE END Includes */
 
@@ -46,6 +48,7 @@
 
 /* USER CODE BEGIN PV */
 
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -56,15 +59,14 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+uint8_t buffer[8];
 
-/* 引脚设定
-C0 CLK
-C15 CS
-C14 CMD
-C13 DAT
-*/
-char buffer[8] = {0x11, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08};
-
+int fputc(int c,FILE *stream)
+{
+    uint8_t ch[1]={c};
+    BSP_UART_TransmitData(&com1_obj, ch, 1);
+    return c;
+}
 /* USER CODE END 0 */
 
 /**
@@ -84,6 +86,7 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
+  BSP_Init();
 
   /* USER CODE END Init */
 
@@ -107,8 +110,7 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-    HAL_Delay(500);
-    HAL_UART_Transmit_DMA(&huart1, (const uint8_t *)buffer, 8);
+
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

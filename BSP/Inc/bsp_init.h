@@ -23,6 +23,11 @@ extern UART_Object_t com1_obj;
 
 /* 函数声明 ------------------------------------------------------------------*/
 void BSP_Init(void);
+uint8_t PS2_ReadData(uint8_t command);
+unsigned char PS2_DataKey();
+uint8_t PS2_AnologData(uint8_t button);
+void PS2_ClearData();
+void PS2_Vibration(uint8_t motor1, uint8_t motor2);
 
 #endif  // BSP_INIT_H
 
